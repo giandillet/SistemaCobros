@@ -1,0 +1,30 @@
+.header-container {
+  display: flex;
+  justify-content: center; /* centra el bloque entero */
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid #ccc;
+  font-family: Arial, sans-serif;
+}
+
+.nombre {
+  margin: 0;
+  font-size: 28px;
+}
+
+.titulo {
+  margin: 5px 0 15px;
+  font-style: italic;
+  color: #555;
+}
+
+.contacto {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+}
