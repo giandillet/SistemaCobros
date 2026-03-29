@@ -1,4 +1,6 @@
 <script>
+  import AlumnoCard from "$lib/AlumnoCard.svelte";
+
     let alumnos = $state([
         {nombre:"gian",estado:"Al día"},
         {nombre:"ramon",estado:"Al día"},
@@ -28,11 +30,11 @@
             >
 
             <select bind:value={estado} class="select select-bordered" placeholder="Estado">
-                <option value="Al día">Al día</option>
+                <option value="Al dia">Al día</option>
                 <option value="Debe">Debe</option>
             </select>
 
-            <button on:click={agregar} class="btn btn-primary">
+            <button onclick={agregar} class="btn btn-primary">
                 Agregar
             </button>
         </div>
@@ -42,13 +44,7 @@
             {#each alumnos as alumno}
                 <div class="flex justify-between items-center bg-base-200 p-3 rounded-lg">
 
-                    <span>{alumno.nombre} </span>
-
-                    {#if alumno.estado === "Al día"}
-                        <span class="badge badge-success ml-2">Al día</span>
-                    {:else}
-                        <span class="badge badge-error ml-2">Debe</span>
-                    {/if}
+                    <AlumnoCard nombre={alumno.nombre} estado={alumno.estado}/>
 
                 </div>
             {/each}
